@@ -2,7 +2,7 @@
 
 import moduleTwo from './modules/two';
 
-import moduleOne from './modules/one';
+import timer from './modules/timer';
 
-moduleOne();
+timer('23 january 2024');
 moduleTwo();
