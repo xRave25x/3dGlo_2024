@@ -1,10 +1,8 @@
 const modal = () => {
     const buttons = document.querySelectorAll('.popup-btn');
     const popup = document.querySelector('.popup');
-    const popupClose = popup.querySelector('.popup-close');
     const popupContent = popup.querySelector('.popup-content');
     const screenWidth = window.screen.width;
-    console.log(screenWidth);
 
     const animationPopup = () => {
         if (screenWidth > 768) {
@@ -29,11 +27,11 @@ const modal = () => {
     buttons.forEach(button => button.addEventListener('click', animationPopup));
 
 
-
-    popupClose.addEventListener('click', () => {
-        popup.style.display = 'none';
+    popup.addEventListener('click', e => {
+        if (!e.target.closest('.popup-content') || e.target.classList.contains('popup-close')) {
+            popup.style.display = 'none';
+        }
     });
-
 
 };
 
