@@ -5,12 +5,14 @@ import calc from './modules/calc';
 import tabs from './modules/tabs';
 import slider from './modules/slider';
 import { sliderCarousel } from './modules/sliderCarousel';
+import inputFieldsRules from './modules/inputFieldsRules';
 
 
 timer('23 january 2024');
 menu();
 modal();
-calc();
+inputFieldsRules();
+calc(100);
 tabs();
 slider();
 sliderCarousel();
