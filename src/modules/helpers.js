@@ -1,31 +1,24 @@
 
-const animate = () => {
-    const popup = document.querySelector('.popup');
-    popup.style.display = 'block';
-    setTimeout(() => {
 
-        animate({
-            duration: 1000,
-            timing(timeFraction) {
-                return timeFraction;
-            },
-            draw(progress) {
-                popup.style.opacity = progress;
-            }
-        });
-    }, 2000);
+function animate({ duration, timing, draw }) {
+    const start = performance.now();
 
+    requestAnimationFrame(function animate(time) {
+        // timeFraction изменяется от 0 до 1
+        let timeFraction = (time - start) / duration;
+        if (timeFraction > 1) timeFraction = 1;
 
-    // let op = 0;
-    // setTimeout(function func() {
-    //     if (op > 1)
-    //         return;
-    //     popup.style.display = 'block';
-    //     popup.style.opacity = op;
-    //     op += 0.1;
+        // вычисление текущего состояния анимации
+        const progress = timing(timeFraction);
 
-    // }, 60);
-};
+        draw(progress); // отрисовать её
+
+        if (timeFraction < 1) {
+            requestAnimationFrame(animate);
+        }
+
+    });
+}
 
 export { animate };
 
