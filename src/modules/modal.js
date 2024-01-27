@@ -4,11 +4,6 @@ const modal = () => {
     const buttons = document.querySelectorAll('.popup-btn');
     const popup = document.querySelector('.popup');
 
-
-
-
-
-
     buttons.forEach(button => button.addEventListener('click', () => {
         animate({
             duration: 1000,
@@ -19,6 +14,8 @@ const modal = () => {
                 if (window.innerWidth >= 768) {
                     popup.style.display = 'block';
                     popup.style.opacity = progress;
+                } else {
+                    popup.style.display = 'block';
                 }
             }
         });
