@@ -7,7 +7,7 @@ import slider from './modules/slider';
 import { sliderCarousel } from './modules/sliderCarousel';
 import sendForm from './modules/sendForm';
 import inputFieldsRules from './inputFiledRules';
-
+import commandImg from './modules/commandImg';
 
 timer('23 january 2024');
 menu();
@@ -18,6 +18,8 @@ tabs();
 slider();
 sliderCarousel();
 inputFieldsRules();
+commandImg();
+
 sendForm({
     formId: 'form1',
     someElem: [
