@@ -6,7 +6,7 @@ import tabs from './modules/tabs';
 import slider from './modules/slider';
 import { sliderCarousel } from './modules/sliderCarousel';
 import sendForm from './modules/sendForm';
-
+import inputFieldsRules from './inputFiledRules';
 
 
 timer('23 january 2024');
@@ -17,6 +17,7 @@ calc(100);
 tabs();
 slider();
 sliderCarousel();
+inputFieldsRules();
 sendForm({
     formId: 'form1',
     someElem: [
